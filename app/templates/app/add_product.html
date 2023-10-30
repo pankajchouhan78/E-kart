@@ -1,0 +1,49 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Empty Cart{% endblock title %}
+{% block main-content %}
+<div class="container my-5">
+
+    <form method="post" action="" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Product Title</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="title">
+         
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Selling Price</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" name="selling_price">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Discounted Price</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" name="discounted_price" >
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Description</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" name="description" >
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Brand</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" name="brand" >
+        </div>
+        <select class="form-select" aria-label="Default select example" name="category">
+          <option selected>Select product category</option>
+          <option value="E">Electronics</option>
+          <option value="M">Mobile</option>
+          <option value="L">Laptop</option>
+          <option value="TW">Topwear</option>
+          <option value="BW">Bottomwear</option>
+        </select>
+
+        
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Product Image</label>
+          <input type="file" class="form-control" id="exampleInputPassword1" name="image">
+        </div>
+       
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+</div>
+{% endblock main-content %}
